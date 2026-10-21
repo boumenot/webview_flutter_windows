@@ -1,0 +1,27 @@
+# Pub uses this file instead of .gitignore.
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.pub/
+**/.pub-cache/
+**/build/
+**/coverage/
+**/doc/api/
+**/.widget_preview/
+**/pubspec.lock
+**/pubspec_overrides.yaml
+example/windows/
+example/.metadata
+
+.github/
+.git/
+**/.idea/
+**/.vs/
+**/.vscode/
+*.iml
+*.suo
+*.user
+*.log
+*.swp
+.DS_Store
+Thumbs.db

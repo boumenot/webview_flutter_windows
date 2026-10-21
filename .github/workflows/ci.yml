@@ -1,0 +1,39 @@
+name: Windows
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - uses: NuGet/setup-nuget@v2
+      - name: Generate example Windows runner
+        working-directory: example
+        run: flutter create --platforms=windows --empty --project-name=webview_flutter_windows_example --no-pub .
+      - name: Resolve package dependencies
+        run: flutter pub get
+      - name: Resolve example dependencies
+        working-directory: example
+        run: flutter pub get
+      - name: Check Dart formatting
+        run: dart format --output=none --set-exit-if-changed lib test example\lib example\integration_test
+      - name: Analyze
+        run: flutter analyze --fatal-infos
+      - name: Run unit and widget tests
+        run: flutter test
+      - name: Build Windows example
+        working-directory: example
+        run: flutter build windows --release --no-pub
+      - name: Check package archive
+        run: dart pub publish --dry-run

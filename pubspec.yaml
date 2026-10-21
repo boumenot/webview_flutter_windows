@@ -1,0 +1,33 @@
+name: webview_flutter_windows
+description: A Windows implementation of webview_flutter using Microsoft Edge WebView2, with navigation, JavaScript, cookies, and hidden web views.
+repository: https://github.com/boumenot/webview_flutter_windows
+issue_tracker: https://github.com/boumenot/webview_flutter_windows/issues
+version: 0.1.0
+
+environment:
+  sdk: ^3.11.0
+  flutter: ">=3.41.0"
+
+flutter:
+  plugin:
+    implements: webview_flutter
+    platforms:
+      windows:
+        pluginClass: WebViewFlutterWindowsPlugin
+        dartPluginClass: WindowsWebViewPlatform
+
+dependencies:
+  flutter:
+    sdk: flutter
+  meta: ^1.10.0
+  webview_flutter_platform_interface: ^2.15.1
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+
+topics:
+  - html
+  - webview
+  - webview-flutter

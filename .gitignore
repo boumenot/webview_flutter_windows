@@ -1,0 +1,26 @@
+# Dart and Flutter generated files.
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.pub/
+**/.pub-cache/
+**/build/
+**/coverage/
+**/doc/api/
+**/.widget_preview/
+/pubspec.lock
+
+# Generated example platform scaffold.
+/example/windows/
+/example/.metadata
+
+# Editor and operating system files.
+**/.idea/
+**/.vs/
+*.iml
+*.suo
+*.user
+*.log
+*.swp
+.DS_Store
+Thumbs.db
